@@ -68,16 +68,35 @@ public class Polinomio {
             }
         }
     }
-    public void sumar() {
+    
+    public void sumar(Polinomio poli, Polinomio poli2) {
+        Monomio auxPoli1 = poli.getInicio();
+        Monomio auxPoli2 = poli2.getInicio();
+        
+        while (auxPoli1 != null && auxPoli2 != null) {
+            if (auxPoli1.getExp() > auxPoli2.getExp()) {
+                this.insertar(auxPoli2.getCoe(), auxPoli2.getExp());
+                auxPoli2 = auxPoli2.getMonoNext();
+            }
+            else {
+                if (auxPoli1.getExp() < auxPoli2.getExp()) {
+                    this.insertar(auxPoli2.getCoe(), auxPoli1.getExp());
+                    auxPoli1 = auxPoli1.getMonoNext();
+                } else {
+                    this.insertar(auxPoli1.getCoe() + auxPoli2.getCoe(), auxPoli1.getExp());
+                    auxPoli1 = auxPoli1.getMonoNext();
+                    auxPoli2 = auxPoli2.getMonoNext();             
+                }
+            }
+        }
+    }
+    public void restar(Polinomio poli2) {
         
     }
-    public void restar() {
+    public void multiplicar(Polinomio poli2) {
         
     }
-    public void multiplicar() {
-        
-    }
-    public void dividir() {
+    public void dividir(Polinomio poli2) {
         
     }
     
