@@ -17,10 +17,10 @@ public class Main {
             poli2.insertar(rand.nextInt(5)+1, rand.nextInt(3)+1);
         }
         
-        System.out.println("Imprimiendo 1er Polinomio");
-        poli.mostrarTodo();
-        System.out.println("Imprimiendo 2o Polinomio");
-        poli2.mostrarTodo();
+//        System.out.println("Imprimiendo 1er Polinomio");
+//        poli.mostrarTodo();
+//        System.out.println("Imprimiendo 2o Polinomio");
+//        poli2.mostrarTodo();
         
         poli.ordenar();
         poli2.ordenar();
@@ -30,6 +30,12 @@ public class Main {
         System.out.println("\n2o Polinomio:\n");
         poli2.mostrarTodo();
         
+        System.out.println("Reduciendo..." + "\n1er Polinomio");
+        poli.simplificar();
+        poli.mostrarTodo();
+        System.out.println("Reduciendo..." + "\n2o Polinomio");
+        poli2.simplificar();
+        poli2.mostrarTodo();
         
         
         

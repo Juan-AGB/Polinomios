@@ -1,5 +1,7 @@
 package noGui;
 
+import java.util.Objects;
+
 public class Polinomio {
     
     private Monomio inicio;
@@ -51,7 +53,20 @@ public class Polinomio {
     }
     public void simplificar() {
         Monomio aux = inicio;
-        
+        Monomio aux2 = aux.getMonoNext();
+        while (aux2 != null) {
+            if (aux.getExp() == aux2.getExp()) {
+                aux.setCoe(aux.getCoe() + aux2.getCoe());
+                aux2 = aux2.getMonoNext();
+                aux.setMonoNext(aux2); //
+                }
+            else {
+                
+                aux.setMonoNext(aux2);
+                aux = aux2;
+                aux2 = aux2.getMonoNext();
+            }
+        }
     }
     public void sumar() {
         
