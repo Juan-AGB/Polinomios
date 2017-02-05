@@ -16,22 +16,10 @@ public class Monomio {
         exp = 0;
         monoNext = null;
     }
-
-//    public Monomio(Integer coe, Integer exp) {
-//        this.coe = coe;
-//        this.exp = exp;
-//        monoNext = null;
-//    }
-    
     
     public void mostrar() {
         System.out.println(this.coe + "X^" + this.exp + "\n");
     }
-//    public void insertarUno(Integer coe, Integer exp) {
-//        this.coe = coe;
-//        this.exp = exp;
-//        monoNext = new Monomio();
-//    }
     
     public Monomio getMonoNext() {
         return monoNext;
