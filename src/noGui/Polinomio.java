@@ -28,9 +28,25 @@ public class Polinomio {
         } 
     }
     public void mostrarTodo() {
-        Monomio aux = inicio;
+        if (inicio.getCoe() != 0) {
+            if (inicio.getCoe() != 1) {
+                System.out.print(inicio.getCoe() + "X^" + inicio.getExp());
+            }
+            else {
+                System.out.print("X^" + inicio.getExp());
+            }
+        }
+        Monomio aux = inicio.getMonoNext();
         while (aux != null) {
-            aux.mostrar();
+            if (aux.getCoe() != 0) {
+                if (aux.getCoe() > 0) {
+                    System.out.print(" +");
+                }
+                if (aux.getCoe() != 1) {
+                    System.out.print(" " + aux.getCoe());
+                }
+                System.out.print("X^" + aux.getExp());
+            }
             aux = aux.getMonoNext();
         }
     }
@@ -69,8 +85,8 @@ public class Polinomio {
         }
     }
     
-    public void sumar(Polinomio poli, Polinomio poli2) {
-        Monomio auxPoli1 = poli.getInicio();
+    public void sumar(Polinomio poli1, Polinomio poli2) {
+        Monomio auxPoli1 = poli1.getInicio();
         Monomio auxPoli2 = poli2.getInicio();
         
         while (auxPoli1 != null && auxPoli2 != null) {
@@ -98,10 +114,36 @@ public class Polinomio {
             auxPoli2 = auxPoli2.getMonoNext();
         }
     }
-    public void restar(Polinomio poli2) {
+    public void restar(Polinomio poli1, Polinomio poli2) {
+        Monomio auxPoli1 = poli1.getInicio();
+        Monomio auxPoli2 = poli2.getInicio();
         
+        while (auxPoli1 != null && auxPoli2 != null) {
+            if (auxPoli1.getExp() > auxPoli2.getExp()) {
+                this.insertar(auxPoli2.getCoe(), auxPoli2.getExp());
+                auxPoli2 = auxPoli2.getMonoNext();
+            }
+            else {
+                if (auxPoli1.getExp() < auxPoli2.getExp()) {
+                    this.insertar(auxPoli2.getCoe(), auxPoli1.getExp());
+                    auxPoli1 = auxPoli1.getMonoNext();
+                } else {
+                    this.insertar(auxPoli1.getCoe() - auxPoli2.getCoe(), auxPoli1.getExp());
+                    auxPoli1 = auxPoli1.getMonoNext();
+                    auxPoli2 = auxPoli2.getMonoNext();             
+                }
+            }
+        }
+        while (auxPoli1 != null) {
+            this.insertar(auxPoli1.getCoe(), auxPoli1.getExp());
+            auxPoli1 = auxPoli1.getMonoNext();
+        }
+        while (auxPoli2 != null) {
+            this.insertar(auxPoli2.getCoe(), auxPoli2.getExp());
+            auxPoli2 = auxPoli2.getMonoNext();
+        }
     }
-    public void multiplicar(Polinomio poli2) {
+    public void multiplicar(Polinomio poli1, Polinomio poli2) {
         
     }
     public void dividir(Polinomio poli2) {
