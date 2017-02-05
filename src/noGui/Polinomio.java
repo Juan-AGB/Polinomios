@@ -89,6 +89,14 @@ public class Polinomio {
                 }
             }
         }
+        while (auxPoli1 != null) {
+            this.insertar(auxPoli1.getCoe(), auxPoli1.getExp());
+            auxPoli1 = auxPoli1.getMonoNext();
+        }
+        while (auxPoli2 != null) {
+            this.insertar(auxPoli2.getCoe(), auxPoli2.getExp());
+            auxPoli2 = auxPoli2.getMonoNext();
+        }
     }
     public void restar(Polinomio poli2) {
         

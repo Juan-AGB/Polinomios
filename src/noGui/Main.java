@@ -42,13 +42,13 @@ public class Main {
         poliR.sumar(poli, poli2);
         poliR.mostrarTodo();
 //        System.out.println("Restando Listas...\n");
-//        poli.sumar(poli2);
-//        
+//        poli.restar(poli2);
+//        poliR.mostrarTodo();
 //        System.out.println("Multiplicando Listas...\n");
-//        poli.sumar(poli2);
+//        poli.multiplicar(poli2);
 //        
 //        System.out.println("Dividiendo Listas...\n");
-//        poli.sumar(poli2);
+//        poli.dividir(poli2);
         
         
         
