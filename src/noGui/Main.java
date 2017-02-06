@@ -90,7 +90,6 @@ public class Main {
             System.out.println("\n...");
             r = sc.nextInt();
         }
-        
 //        System.out.println("Dividiendo Listas...\n");
 //        poli.dividir(poli2);
     }
