@@ -17,10 +17,6 @@ public class Monomio {
         monoNext = null;
     }
     
-    public void mostrar() {
-        System.out.println(this.coe + "X^" + this.exp + "\n");
-    }
-    
     public Monomio getMonoNext() {
         return monoNext;
     }

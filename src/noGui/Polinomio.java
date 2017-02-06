@@ -144,6 +144,29 @@ public class Polinomio {
         }
     }
     public void multiplicar(Polinomio poli1, Polinomio poli2) {
+        Monomio auxPoli1 = poli1.getInicio();
+        //this.insertar(0, 0);
+        //Monomio aux = inicio;
+        
+        //Polinomio prueba = new Polinomio();
+        while (auxPoli1 != null) {
+            Integer coeA = 0;
+            Integer expA = 0;
+            Monomio auxPoli2 = poli2.getInicio();
+            while (auxPoli2 != null) {
+                coeA = coeA + (auxPoli1.getCoe() * auxPoli2.getCoe());
+                expA = expA + (auxPoli1.getExp() + auxPoli2.getExp());
+//                aux.setCoe(auxPoli1.getCoe() * auxPoli2.getCoe() + (aux.getCoe()));
+//                aux.setExp(auxPoli1.getExp() + auxPoli2.getExp() + (aux.getExp()));
+                auxPoli2 = auxPoli2.getMonoNext();
+            }
+//            aux.setCoe(coeA);
+//            aux.setExp(expA);
+//            aux = aux.getMonoNext();
+            this.insertar(coeA, expA);
+            //System.out.println(this.inicio.getCoe() + " " + this.inicio.getExp());
+            auxPoli1 = auxPoli1.getMonoNext();
+        }
         
     }
     public void dividir(Polinomio poli2) {
