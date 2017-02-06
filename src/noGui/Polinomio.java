@@ -30,10 +30,16 @@ public class Polinomio {
     public void mostrarTodo() {
         if (inicio.getCoe() != 0) {
             if (inicio.getCoe() != 1) {
-                System.out.print(inicio.getCoe() + "X^" + inicio.getExp());
+                System.out.print(inicio.getCoe() + "X");
+                if (inicio.getExp() != 1) {
+                    System.out.println("^" + inicio.getExp());
+                }
             }
             else {
-                System.out.print("X^" + inicio.getExp());
+                System.out.print("X");
+                if (inicio.getExp() != 1) {
+                    System.out.println("^" + inicio.getExp());
+                }
             }
         }
         Monomio aux = inicio.getMonoNext();
